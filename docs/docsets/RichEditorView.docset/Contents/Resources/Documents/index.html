@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RichEditorView  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="RichEditorView  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">RichEditorView Docs</a> (70% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">RichEditorView Reference</a>
+        <img id="carat" src="img/carat.png" />
+        RichEditorView  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/RichBarButtonItem.html">RichBarButtonItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RichEditorToolbar.html">RichEditorToolbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RichEditorView.html">RichEditorView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/RichEditorOptions.html">RichEditorOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/RichEditorDelegate.html">RichEditorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RichEditorOption.html">RichEditorOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RichEditorToolbarDelegate.html">RichEditorToolbarDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/RichEditorOptionItem.html">RichEditorOptionItem</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#richeditorview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='richeditorview'>RichEditorView</h2>
+
+<p><a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-BSD3-blue.svg" alt="License: BSD 3"></a>
+<a href="http://cocoapods.org/pods/RichEditorView"><img src="https://img.shields.io/cocoapods/v/RichEditorView.svg" alt="Cocoapods"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg" alt="Carthage compatible"></a></p>
+
+<p>RichEditorView is a simple, modular, drop-in UIView subclass for Rich Text Editing.</p>
+
+<p>Written in Swift 2.0 (Xcode 7.0)</p>
+
+<p>Supports iOS 8 and 9 through Cocoapods or Carthage.</p>
+
+<ul>
+<li><em>Looking for Android? Check out</em> <a href="https://github.com/wasabeef/richeditor-android">wasabeef/richeditor-android</a></li>
+</ul>
+<a href='#seen_in_action' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='seen_in_action'>Seen in Action</h2>
+
+<p><img src="./art/Demo.gif" alt="Demo"></p>
+
+<p>Just clone the project and open <code>RichEditorViewSample/RichEditorViewSample.xcworkspace</code> in Xcode.</p>
+<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
+
+<p><img src="./art/Toolbar.gif" alt="Toolbar Demo"></p>
+
+<ul>
+<li>[x] Bold</li>
+<li>[x] Italic</li>
+<li>[x] Subscript</li>
+<li>[x] Superscript</li>
+<li>[x] Strikethrough</li>
+<li>[x] Underline</li>
+<li>[x] Justify Left</li>
+<li>[x] Justify Center</li>
+<li>[x] Justify Right</li>
+<li>[x] Heading 1</li>
+<li>[x] Heading 2</li>
+<li>[x] Heading 3</li>
+<li>[x] Heading 4</li>
+<li>[x] Heading 5</li>
+<li>[x] Heading 6</li>
+<li>[x] Undo</li>
+<li>[x] Redo</li>
+<li>[x] Ordered List</li>
+<li>[x] Unordered List</li>
+<li>[x] Indent</li>
+<li>[x] Outdent</li>
+<li>[x] Insert Image</li>
+<li>[x] Insert Link</li>
+<li>[x] Text Color</li>
+<li>[x] Text Background Color</li>
+</ul>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='cocoapods'>Cocoapods</h4>
+
+<p>If you have Cocoapods 0.36+ installed, you can use Cocoapods to include <code>RichEditorView</code> into your project.
+Add the following to your <code>Podfile</code>:</p>
+<pre class="highlight plaintext"><code>pod "RichEditorView"
+use_frameworks!
+</code></pre>
+
+<p>Note: the <code>use_frameworks!</code> is required for pods made in Swift.</p>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='carthage'>Carthage</h4>
+
+<p>Add the following to your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github 'cjwirth/RichEditorView'
+</code></pre>
+<a href='#using_richeditorview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='using_richeditorview'>Using RichEditorView</h2>
+
+<p><code>RichEditorView</code> makes no assumptions about how you want to use it in your app. It is a plain <code>UIView</code> subclass, so you are free to use it wherever, however you want.</p>
+
+<p>Most basic use:</p>
+<pre class="highlight plaintext"><code>editor = RichEditorView(frame: self.view.bounds)
+editor.setHTML("&lt;h1&gt;My Awesome Editor&lt;/h1&gt;Now I am editing in &lt;em&gt;style.&lt;/em&gt;")
+self.view.addSubview(editor)
+</code></pre>
+<a href='#editing_text' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='editing_text'>Editing Text</h3>
+
+<p>To change the styles of the currently selected text, you just call methods directly on the <code>RichEditorView</code>:
+<code>Swift
+editor.bold()
+editor.italic()
+editor.setTextColor(UIColor.redColor())
+</code></p>
+
+<p>If you want to show the editing toolbar <code>RichEditorToolbar</code>, you will need to handle displaying it (<code>KeyboardManager.swift</code> in the sample project is a good start). But configuring it is as easy as telling it which options you want to enable, and telling it which <code>RichEditorView</code> to work on.</p>
+<pre class="highlight plaintext"><code>let toolbar = RichEditorToolbar(frame: CGRectMake(0, 0, 320, 44))
+toolbar.options = RichEditorOptions.all()
+toolbar.editor = editor // Previously instantiated RichEditorView
+</code></pre>
+
+<p>Some actions require user feedback (such as select an image, choose a color, etc). In this cases you can conform to the <code>RichEditorToolbarDelegate</code> and react to these actions, and maybe display some custom UI. For example, from the sample project, we just select a random color:</p>
+<pre class="highlight plaintext"><code>private func randomColor() -&gt; UIColor {
+    let colors = [
+        UIColor.redColor(),
+        UIColor.orangeColor(),
+        UIColor.yellowColor(),
+        UIColor.greenColor(),
+        UIColor.blueColor(),
+        UIColor.purpleColor()
+    ]
+
+    let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+    return color
+}
+
+func richEditorToolbarChangeTextColor(toolbar: RichEditorToolbar) {
+    let color = randomColor()
+    toolbar.editor?.setTextColor(color)
+}
+</code></pre>
+<a href='#advanced_editing' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='advanced_editing'>Advanced Editing</h4>
+
+<p>If you need even more flexibility with your options, you can add completely custom actions, by either making an object that conforms the the <code>RichEditorOption</code> protocol, or configuring a <code>RichEditorOptionItem</code> object, and adding it to the toolbar&rsquo;s options:</p>
+<pre class="highlight plaintext"><code>let clearAllItem = RichEditorOptionItem(image: UIImage(named: "clear"), title: "Clear") { toolbar in
+    toolbar?.editor?.setHTML("")
+    return
+}
+toolbar.options = [clearAllItem]
+</code></pre>
+<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='author'>Author</h2>
+
+<p>Caesar Wirth - <a href="mailto:cjwirth@gmail.com">cjwirth@gmail.com</a></p>
+
+<p><a href="http://www.twitter.com/cjwirth">
+<img src="https://g.twimg.com/Twitter_logo_blue.png" width="50px" alt="@cjwirth on Twitter">
+@cjwirth
+</a></p>
+<a href='#acknowledgements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='acknowledgements'>Acknowledgements</h2>
+
+<ul>
+<li><a href="https://github.com/wasabeef/richeditor-android">wasabeef/richeditor-android</a> - Android version of this library (Apache v2)</li>
+<li><a href="https://github.com/nnhubbard/ZSSRichTextEditor">nnhubbard/ZSSRichTextEditor</a> - Inspiration and Icons (MIT)</li>
+</ul>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>RichEditorView is released under the BSD 3-Clause License. See <a href="./LICENSE.md">LICENSE.md</a> for details.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/cjwirth/RichEditorView" target="_blank" rel="external">Caesar Wirth</a>. All rights reserved. (Last updated: 2016-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

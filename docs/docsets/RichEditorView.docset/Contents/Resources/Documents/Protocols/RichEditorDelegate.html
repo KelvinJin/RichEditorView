@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RichEditorDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RichEditorDelegate" class="dashAnchor"></a>
+    <a title="RichEditorDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RichEditorView Docs</a> (70% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RichEditorView Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RichEditorDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RichBarButtonItem.html">RichBarButtonItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorToolbar.html">RichEditorToolbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorView.html">RichEditorView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RichEditorOptions.html">RichEditorOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorDelegate.html">RichEditorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorOption.html">RichEditorOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorToolbarDelegate.html">RichEditorToolbarDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RichEditorOptionItem.html">RichEditorOptionItem</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RichEditorDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RichEditorDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>RichEditorDelegate defines callbacks for the delegate of the RichEditorView</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView15heightDidChangeSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/richEditor(_:heightDidChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView15heightDidChangeSi_T_">richEditor(_:heightDidChange:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the inner height of the text being displayed changes
+Can be used to update the UI</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditor</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">,</span> <span class="n">heightDidChange</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView16contentDidChangeSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/richEditor(_:contentDidChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView16contentDidChangeSS_T_">richEditor(_:contentDidChange:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called whenever the content inside the view changes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditor</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">,</span> <span class="n">contentDidChange</span> <span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate19richEditorTookFocusuRq_S0__Fq_FCS_14RichEditorViewT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorTookFocus(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate19richEditorTookFocusuRq_S0__Fq_FCS_14RichEditorViewT_">richEditorTookFocus(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the rich editor starts editing</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorTookFocus</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate19richEditorLostFocusuRq_S0__Fq_FCS_14RichEditorViewT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorLostFocus(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate19richEditorLostFocusuRq_S0__Fq_FCS_14RichEditorViewT_">richEditorLostFocus(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the rich editor stops editing or loses focus</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorLostFocus</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate17richEditorDidLoaduRq_S0__Fq_FCS_14RichEditorViewT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorDidLoad(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate17richEditorDidLoaduRq_S0__Fq_FCS_14RichEditorViewT_">richEditorDidLoad(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the RichEditorView has become ready to receive input
+More concretely, is called when the internal UIWebView loads for the first time, and contentHTML is set</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorDidLoad</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView21shouldInteractWithURLCSo5NSURL_Sb"></a>
+                    <a name="//apple_ref/swift/Method/richEditor(_:shouldInteractWithURL:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView21shouldInteractWithURLCSo5NSURL_Sb">richEditor(_:shouldInteractWithURL:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the internal UIWebView begins loading a URL that it does not know how to respond to
+For example, if there is an external link, and then the user taps it</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditor</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">,</span> <span class="n">shouldInteractWithURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView18handleCustomActionSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/richEditor(_:handleCustomAction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView18RichEditorDelegate10richEditoruRq_S0__Fq_FTCS_14RichEditorView18handleCustomActionSS_T_">richEditor(_:handleCustomAction:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when custom actions are called by callbacks in the JS
+By default, this method is not used unless called by some custom JS that you add</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditor</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorView</span><span class="p">,</span> <span class="n">handleCustomAction</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/cjwirth/RichEditorView" target="_blank" rel="external">Caesar Wirth</a>. All rights reserved. (Last updated: 2016-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

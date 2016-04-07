@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RichEditorOption Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RichEditorOption" class="dashAnchor"></a>
+    <a title="RichEditorOption Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RichEditorView Docs</a> (70% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RichEditorView Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RichEditorOption Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RichBarButtonItem.html">RichBarButtonItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorToolbar.html">RichEditorToolbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorView.html">RichEditorView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RichEditorOptions.html">RichEditorOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorDelegate.html">RichEditorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorOption.html">RichEditorOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorToolbarDelegate.html">RichEditorToolbarDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RichEditorOptionItem.html">RichEditorOptionItem</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RichEditorOption</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RichEditorOption</span></code></pre>
+
+                </div>
+              </div>
+            <p>A RichEditorOption object is an object that can be displayed in a RichEditorToolbar.
+This protocol is proviced to allow for custom actions not provided in the RichEditorOptions enum</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView16RichEditorOption5imageuRq_S0__Fq_FT_GSqCSo7UIImage_"></a>
+                    <a name="//apple_ref/swift/Method/image()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView16RichEditorOption5imageuRq_S0__Fq_FT_GSqCSo7UIImage_">image()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the image to be displayed in the RichEditorToolbar</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">image</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView16RichEditorOption5titleuRq_S0__Fq_FT_SS"></a>
+                    <a name="//apple_ref/swift/Method/title()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView16RichEditorOption5titleuRq_S0__Fq_FT_SS">title()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the title of the item.
+If <code><a href="../Protocols/RichEditorOption.html#/s:FP14RichEditorView16RichEditorOption5imageuRq_S0__Fq_FT_GSqCSo7UIImage_">image()</a></code> returns nil, this method will be used for display in the RichEditorToolbar</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">title</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView16RichEditorOption6actionuRq_S0__Fq_FGSqCS_17RichEditorToolbar_T_"></a>
+                    <a name="//apple_ref/swift/Method/action(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView16RichEditorOption6actionuRq_S0__Fq_FGSqCS_17RichEditorToolbar_T_">action(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The action to be evoked when the action is tapped</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">action</span><span class="p">(</span><span class="nv">editor</span><span class="p">:</span> <span class="kt">RichEditorToolbar</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>editor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The RichEditorToolbar that the RichEditorOption was being displayed in when tapped. Contains a reference to the <code>editor</code> RichEditorView to perform actions on</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/cjwirth/RichEditorView" target="_blank" rel="external">Caesar Wirth</a>. All rights reserved. (Last updated: 2016-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

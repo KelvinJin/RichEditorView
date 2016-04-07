@@ -1,0 +1,36 @@
+RichEditorOptionItem.swift
+	public init(image: UIImage?, title: String, action: (RichEditorToolbar? -> Void))
+	public func image() -> UIImage?
+	public func title() -> String
+	public func action(toolbar: RichEditorToolbar?)
+	case Clear
+	case Undo
+	case Redo
+	case Bold
+	case Italic
+	case Subscript
+	case Superscript
+	case Strike
+	case Underline
+	case TextColor
+	case TextBackgroundColor
+	case Header(Int)
+	case Indent
+	case Outdent
+	case OrderedList
+	case UnorderedList
+	case AlignLeft
+	case AlignCenter
+	case AlignRight
+	case Image
+	case Link
+	public static func all() -> [RichEditorOption]
+	public func image() -> UIImage?
+	public func title() -> String
+	public func action(toolbar: RichEditorToolbar?)
+RichEditorToolbar.swift
+	public var actionHandler: (Void -> Void)?
+	public convenience init(image: UIImage? = nil, handler: (Void -> Void)? = nil)
+	public convenience init(title: String = "", handler: (Void -> Void)? = nil)
+	public override init(frame: CGRect)
+	public required init?(coder aDecoder: NSCoder)

@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RichEditorView Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RichEditorView" class="dashAnchor"></a>
+    <a title="RichEditorView Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RichEditorView Docs</a> (70% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RichEditorView Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RichEditorView Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RichBarButtonItem.html">RichBarButtonItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorToolbar.html">RichEditorToolbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorView.html">RichEditorView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RichEditorOptions.html">RichEditorOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorDelegate.html">RichEditorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorOption.html">RichEditorOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorToolbarDelegate.html">RichEditorToolbarDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RichEditorOptionItem.html">RichEditorOptionItem</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RichEditorView</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RichEditorView</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+
+                </div>
+              </div>
+            <p>RichEditorView is a UIView that displays richly styled text, and allows it to be edited in a WYSIWYG fashion.
+It is a thin wrapper around a UIWebView utilizing the <code>contentEditable</code> APIs available in JavaScript.</p>
+
+<p>It can be used just like any other UIView, either in code or in a storyboard or xib.</p>
+
+<pre class="highlight swift"><code><span class="c1">// In `viewDidLoad` of a `UIViewController`</span>
+<span class="k">let</span> <span class="nv">editor</span> <span class="o">=</span> <span class="kt">RichEditorView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
+</code></pre>
+
+<p>After that, when the user is inputting text, you will probably want to allow them to customize the text.
+This is done by calling the methods in the <em>Rich Text Editing</em> section below.</p>
+
+<p>You will probably want a toolbar in order to assist the user in selecting text editing options. You can use the
+<code><a href="../Classes/RichEditorToolbar.html">RichEditorToolbar</a></code> included in the library, or create your own custom view, setting it to the <code>inputAccessoryView</code>.</p>
+
+<p>Check out the sample project for a more complete example of how it can be used.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView8delegateXwGSqPS_18RichEditorDelegate__"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView8delegateXwGSqPS_18RichEditorDelegate__">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The delegate that will receive callbacks when certain actions are completed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">RichEditorDelegate</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView13scrollEnabledSb"></a>
+                    <a name="//apple_ref/swift/Property/scrollEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView13scrollEnabledSb">scrollEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not scroll is enabled on the view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">scrollEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView18inputAccessoryViewGSqCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/inputAccessoryView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView18inputAccessoryViewGSqCSo6UIView_">inputAccessoryView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Input accessory view to display over they keyboard.
+Defaults to nil.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">inputAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView7webViewCSo9UIWebView"></a>
+                    <a name="//apple_ref/swift/Property/webView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView7webViewCSo9UIWebView">webView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The internal UIWebView that is used to display the text.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">UIWebView</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView14editingEnabledSb"></a>
+                    <a name="//apple_ref/swift/Property/editingEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView14editingEnabledSb">editingEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not to allow user input in the view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">editingEnabled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView11placeholderSS"></a>
+                    <a name="//apple_ref/swift/Property/placeholder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView11placeholderSS">placeholder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The placeholder text that should be shown when there is no user input.
+To set, use <code>setPlaceholderText(text: String)</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">placeholder</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView12editorHeightSi"></a>
+                    <a name="//apple_ref/swift/Property/editorHeight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView12editorHeightSi">editorHeight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The internal height of the text being displayed.
+Is continually being updated as the text is edited.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">editorHeight</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14RichEditorView14RichEditorView11contentHTMLSS"></a>
+                    <a name="//apple_ref/swift/Property/contentHTML" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14RichEditorView14RichEditorView11contentHTMLSS">contentHTML</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The content HTML of the text being displayed.
+Is continually updated as the text is being edited.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">contentHTML</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorViewcFMS0_FT5frameVSC6CGRect_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorViewcFMS0_FT5frameVSC6CGRect_S0_">init(frame:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialization function used when initializing from code.</p>
+
+<p>This is the same as any other UIView.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The frame that the new rich editor view should have.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorViewcFMS0_FT5coderCSo7NSCoder_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorViewcFMS0_FT5coderCSo7NSCoder_GSqS0__">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialization function used when initializing with an NSCoder.
+You probably won&rsquo;t call this directly, rather it is called when initializing froma storyboard or nib.</p>
+
+<p>This is the same as any other UIView.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A decoder which will assist in initializing the view.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Rich%20Text%20Editing"></a>
+                <a name="//apple_ref/swift/Section/Rich Text Editing" class="dashAnchor"></a>
+                <a href="#/Rich%20Text%20Editing">
+                  <h3 class="section-name">Rich Text Editing</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView7setHTMLFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/setHTML(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView7setHTMLFS0_FSST_">setHTML(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the HTML to be displayed in the editor. Overwrites any input that is currently being displayed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setHTML</span><span class="p">(</span><span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>HTML string to put in the editor.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView7getHTMLFS0_FT_SS"></a>
+                    <a name="//apple_ref/swift/Method/getHTML()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView7getHTMLFS0_FT_SS">getHTML()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all the input text in HTML format, just as it is displayed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getHTML</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Input text in HTML format.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView7getTextFS0_FT_SS"></a>
+                    <a name="//apple_ref/swift/Method/getText()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView7getTextFS0_FT_SS">getText()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the input text as plain text &ndash; without any HTMl formatting, lists, or headings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getText</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Input text as plain text without any formatting.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView18setPlaceholderTextFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/setPlaceholderText(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView18setPlaceholderTextFS0_FSST_">setPlaceholderText(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the placeholder text to display when there is no text input in the editor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPlaceholderText</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Placeholder text to display when input is empty.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView12removeFormatFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/removeFormat()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView12removeFormatFS0_FT_T_">removeFormat()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes any formatting that has been applied to the selected text, such as bold, underline, etc.</p>
+
+<p>This does not remove any non-formatting changes such as being a list node, header, or blockquote.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeFormat</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView11setFontSizeFS0_FSiT_"></a>
+                    <a name="//apple_ref/swift/Method/setFontSize(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView11setFontSizeFS0_FSiT_">setFontSize(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the default font size of all the text in the editor.</p>
+
+<p>Note: This applies to the style of the <em>editor</em>, and not of the <em>selected text</em>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setFontSize</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Size in pixels to change the font size to.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView24setEditorBackgroundColorFS0_FCSo7UIColorT_"></a>
+                    <a name="//apple_ref/swift/Method/setEditorBackgroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView24setEditorBackgroundColorFS0_FCSo7UIColorT_">setEditorBackgroundColor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the background color of the internal editor itself.</p>
+
+<p>Converts the UIColor parameter to its hex value before in doing so.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setEditorBackgroundColor</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Color to change the editor&rsquo;s background color to.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView4undoFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/undo()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView4undoFS0_FT_T_">undo()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Un-applies the last action that was performed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">undo</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView4redoFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/redo()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView4redoFS0_FT_T_">redo()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Re-applies the last undo&rsquo;d action in the undo stack.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">redo</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView4boldFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/bold()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView4boldFS0_FT_T_">bold()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text to be bold.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">bold</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView6italicFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/italic()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView6italicFS0_FT_T_">italic()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text to be italic.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">italic</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView13subscriptTextFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/subscriptText()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView13subscriptTextFS0_FT_T_">subscriptText()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text to have be a subscript.</p>
+
+<p>Since <code>subscript</code> is a Swift keyword, <code>subscriptText</code> was chosen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">subscriptText</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView11superscriptFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/superscript()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView11superscriptFS0_FT_T_">superscript()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text to have be a superscript.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">superscript</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView13strikethroughFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/strikethrough()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView13strikethroughFS0_FT_T_">strikethrough()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text to have a strikethrough.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">strikethrough</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView9underlineFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/underline()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView9underlineFS0_FT_T_">underline()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text to be underlined.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">underline</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView12setTextColorFS0_FCSo7UIColorT_"></a>
+                    <a name="//apple_ref/swift/Method/setTextColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView12setTextColorFS0_FCSo7UIColorT_">setTextColor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the selected text&rsquo;s color.</p>
+
+<p>The passed in UIColor will be converted to its hex value and passed into the inner web view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setTextColor</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Color to change the selected text to be.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView22setTextBackgroundColorFS0_FCSo7UIColorT_"></a>
+                    <a name="//apple_ref/swift/Method/setTextBackgroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView22setTextBackgroundColorFS0_FCSo7UIColorT_">setTextBackgroundColor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the background color of the selected text.</p>
+
+<p>The passed in UIColor will be converted to its hex value and passed into the inner web view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setTextBackgroundColor</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Color to change the selected text&rsquo;s background to be.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView6headerFS0_FSiT_"></a>
+                    <a name="//apple_ref/swift/Method/header(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView6headerFS0_FSiT_">header(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begin, or convert selected text, to be a Header tag.</p>
+
+<p>This only accepts values 1 through 6, because it will convert to a <code>&lt;h1&gt;</code> to a <code>&lt;h6&gt;</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">header</span><span class="p">(</span><span class="nv">h</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>h</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Level of header tag to make, eg. <code>1</code> will create an <code>&lt;h1&gt;</code> tag.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView6indentFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/indent()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView6indentFS0_FT_T_">indent()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indents the current text one level.</p>
+
+<p>This seems to be done by making nested blockquote elements.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">indent</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView7outdentFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/outdent()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView7outdentFS0_FT_T_">outdent()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Outdents the current text one level.</p>
+
+<p>This seems to be done by removing nested blockquote elements.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">outdent</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView11orderedListFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/orderedList()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView11orderedListFS0_FT_T_">orderedList()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begins an unordered list. If there is text already selected, it will convert it into an unordered list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">orderedList</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView13unorderedListFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/unorderedList()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView13unorderedListFS0_FT_T_">unorderedList()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begins an unordered list. If there is text already selected, it will convert it into an unordered list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unorderedList</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView10blockquoteFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/blockquote()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView10blockquoteFS0_FT_T_">blockquote()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Puts the current block element into a blockquote.
+In practice, this usually means turning the current paragraph into a blockquote.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">blockquote</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView9alignLeftFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/alignLeft()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView9alignLeftFS0_FT_T_">alignLeft()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the current selection to be left-aligned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">alignLeft</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView11alignCenterFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/alignCenter()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView11alignCenterFS0_FT_T_">alignCenter()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the current selection to be center-aligned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">alignCenter</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView10alignRightFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/alignRight()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView10alignRightFS0_FT_T_">alignRight()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the current selection to be right-aligned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">alignRight</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView11insertImageFS0_FTSS3altSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/insertImage(_:alt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView11insertImageFS0_FTSS3altSS_T_">insertImage(_:alt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inserts an image into the editor that is stored at the location given in the URL.</p>
+
+<p>If called when there is text selected, it will replace the current selection with the image.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">insertImage</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">alt</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL of the image to be displayed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Text to be displayed if the image could not be loaded. The <code>alt</code> attribute of the <code>&lt;img&gt;</code> tag.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView10insertLinkFS0_FTSS5titleSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/insertLink(_:title:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView10insertLinkFS0_FTSS5titleSS_T_">insertLink(_:title:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a link to the selected text.</p>
+
+<p>Links can only be added when there is text selected, because internally it creates a <code>&lt;a&gt;</code> tag around the
+the current selection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">insertLink</span><span class="p">(</span><span class="nv">href</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>href</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL that the link should point to. The <code>href</code> attribute of the <code>&lt;a&gt;</code> tag.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Title that should be added to the link. The <code>title</code> attribute of the <code>&lt;a&gt;</code> tag.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView5focusFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/focus()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView5focusFS0_FT_T_">focus()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gives focus to the inner editor.
+Similar to calling <code>becomeFirstResponder</code>, except on the inside web view.</p>
+
+<p>Probably won&rsquo;t be used too much, but can be useful if the state gets out of sync.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">focus</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView4blurFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/blur()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView4blurFS0_FT_T_">blur()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the focus from the inner editor. 
+Similar to calling <code>resignFirstResponder</code>, except inside the web view.</p>
+
+<p>Probably won&rsquo;t be used too much, but can be useful if the state gets out of sync.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">blur</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView20rangeSelectionExistsFS0_FT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/rangeSelectionExists()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView20rangeSelectionExistsFS0_FT_Sb">rangeSelectionExists()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> if a selection exists and it is of type <q>Range</q></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">rangeSelectionExists</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if a selection exists and it is of type <q>Range</q></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView27rangeOrCaretSelectionExistsFS0_FT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/rangeOrCaretSelectionExists()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView27rangeOrCaretSelectionExistsFS0_FT_Sb">rangeOrCaretSelectionExists()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> if there is currently a selection of type <q>Range</q> or <q>Caret</q>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">rangeOrCaretSelectionExists</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if there was a current selection, and it was of type <q>Range</q> or <q>Caret</q></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView15getSelectedHrefFS0_FT_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/getSelectedHref()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView15getSelectedHrefFS0_FT_GSqSS_">getSelectedHref()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the currently selected link URL if one is selected, or nil otherwise.</p>
+
+<p>Returns a URL in one of these two situations:
+- The cursor is currently inside a link.
+- The current selection starts and ends inside the same link.</p>
+
+<p>Otherwise it returns nil. For example, if the selection goes outside the link, it returns nil.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSelectedHref</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>nil</code> if href is empty, otherwise a non-empty String if a link URL existed</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIScrollViewDelegate"></a>
+                <a name="//apple_ref/swift/Section/UIScrollViewDelegate" class="dashAnchor"></a>
+                <a href="#/UIScrollViewDelegate">
+                  <h3 class="section-name">UIScrollViewDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView19scrollViewDidScrollFS0_FCSo12UIScrollViewT_"></a>
+                    <a name="//apple_ref/swift/Method/scrollViewDidScroll(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView19scrollViewDidScrollFS0_FCSo12UIScrollViewT_">scrollViewDidScroll(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate method for UIScrollView.
+Called when the UIScrollView inside the UIWebView gets scrolled.</p>
+
+<p>If the <code><a href="../Classes/RichEditorView.html#/s:vC14RichEditorView14RichEditorView13scrollEnabledSb">scrollEnabled</a></code> flag is false, it resets the scroll view&rsquo;s bounds, so that it does not end up scrolling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">scrollViewDidScroll</span><span class="p">(</span><span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scrollView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIScrollView inside the UIWebView that was scrolled.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIWebViewDelegate"></a>
+                <a name="//apple_ref/swift/Section/UIWebViewDelegate" class="dashAnchor"></a>
+                <a href="#/UIWebViewDelegate">
+                  <h3 class="section-name">UIWebViewDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView7webViewFS0_FTCSo9UIWebView26shouldStartLoadWithRequestCSo12NSURLRequest14navigationTypeOSC23UIWebViewNavigationType_Sb"></a>
+                    <a name="//apple_ref/swift/Method/webView(_:shouldStartLoadWithRequest:navigationType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView7webViewFS0_FTCSo9UIWebView26shouldStartLoadWithRequestCSo12NSURLRequest14navigationTypeOSC23UIWebViewNavigationType_Sb">webView(_:shouldStartLoadWithRequest:navigationType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate method for UIWebView.
+Is called when a URL will be loaded, and returns whether or not the UIWebView should continue with loading the 
+request.</p>
+
+<p>This is also the main hub for communication between the JavaScript context inside the UIWebView to the 
+RichEditorView. Inside the JavaScript, commands are queued, and when a URL with the scheme <q>re-callback://</q> is 
+loaded, the RichEditorView fetches the commands, and performs them sequentially.</p>
+
+<p>More detail about the performed actions, or the ability to add custom actions, can be found below in 
+<code>performCommand</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">webView</span><span class="p">(</span><span class="nv">webView</span><span class="p">:</span> <span class="kt">UIWebView</span><span class="p">,</span> <span class="n">shouldStartLoadWithRequest</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">NSURLRequest</span><span class="p">,</span> <span class="nv">navigationType</span><span class="p">:</span> <span class="kt">UIWebViewNavigationType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>webView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Internal UIWebView that is being displayed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>request</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSURLRequest that is about to be loaded</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>navigationType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIWebViewNavigationType of what type of navigation will be performed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Whether or not the UIWebView should continue loading the request. For the case of RichEditorView or custom events, it returns <code>false</code>, as the actions are taken care of already.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIGestureRecognizerDelegate"></a>
+                <a name="//apple_ref/swift/Section/UIGestureRecognizerDelegate" class="dashAnchor"></a>
+                <a href="#/UIGestureRecognizerDelegate">
+                  <h3 class="section-name">UIGestureRecognizerDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView17gestureRecognizerFS0_FTCSo19UIGestureRecognizer50shouldRecognizeSimultaneouslyWithGestureRecognizerS1__Sb"></a>
+                    <a name="//apple_ref/swift/Method/gestureRecognizer(_:shouldRecognizeSimultaneouslyWithGestureRecognizer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView17gestureRecognizerFS0_FTCSo19UIGestureRecognizer50shouldRecognizeSimultaneouslyWithGestureRecognizerS1__Sb">gestureRecognizer(_:shouldRecognizeSimultaneouslyWithGestureRecognizer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate method for our UITapGestureDelegate.
+Since the internal web view also has gesture recognizers, we have to make sure that we actually receive our taps.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">gestureRecognizer</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UIGestureRecognizer</span><span class="p">,</span> <span class="n">shouldRecognizeSimultaneouslyWithGestureRecognizer</span> <span class="nv">otherGestureRecognizer</span><span class="p">:</span> <span class="kt">UIGestureRecognizer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gestureRecognizer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The UIGestureRecognizer that is calling the delegate method</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>otherGestureRecognizer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The other UIGestureRecognizer that wants to simultaneously recognize a gesture.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True if the two gesture recognizers should simultaneously recognize the same gesture. Currently always returns true.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Utilities"></a>
+                <a name="//apple_ref/swift/Section/Utilities" class="dashAnchor"></a>
+                <a href="#/Utilities">
+                  <h3 class="section-name">Utilities</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14RichEditorView14RichEditorView5runJSFS0_FSSSS"></a>
+                    <a name="//apple_ref/swift/Method/runJS(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14RichEditorView14RichEditorView5runJSFS0_FSSSS">runJS(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs some JavaScript on the UIWebView and returns the result.
+If there is no result, returns an empty string.</p>
+
+<p>JavaScript can be written just as if it were being written in the Safari Debug Console.
+For example:</p>
+
+<pre class="highlight plaintext"><code>editor.runJS("3 + 5")               // returns "8"
+editor.runJS("RE.editor.innerHTML") // returns the inner HTML of the editor
+editor.runJS("nonsense strings")    // returns the empty string because it is nonsense
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">runJS</span><span class="p">(</span><span class="nv">js</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>js</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The JavaScript string to run.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The result of the JavaScript that was run.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/cjwirth/RichEditorView" target="_blank" rel="external">Caesar Wirth</a>. All rights reserved. (Last updated: 2016-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RichEditorToolbarDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RichEditorToolbarDelegate" class="dashAnchor"></a>
+    <a title="RichEditorToolbarDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RichEditorView Docs</a> (70% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RichEditorView Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RichEditorToolbarDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RichBarButtonItem.html">RichBarButtonItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorToolbar.html">RichEditorToolbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichEditorView.html">RichEditorView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RichEditorOptions.html">RichEditorOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorDelegate.html">RichEditorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorOption.html">RichEditorOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RichEditorToolbarDelegate.html">RichEditorToolbarDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RichEditorOptionItem.html">RichEditorOptionItem</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RichEditorToolbarDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RichEditorToolbarDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>RichEditorToolbarDelegate is a protocol for the RichEditorToolbar.
+Used to receive actions that need extra work to perform (eg. display some UI)</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView25RichEditorToolbarDelegate32richEditorToolbarChangeTextColoruRq_S0__Fq_FCS_17RichEditorToolbarT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorToolbarChangeTextColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView25RichEditorToolbarDelegate32richEditorToolbarChangeTextColoruRq_S0__Fq_FCS_17RichEditorToolbarT_">richEditorToolbarChangeTextColor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the Text Color toolbar item is pressed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorToolbarChangeTextColor</span><span class="p">(</span><span class="nv">toolbar</span><span class="p">:</span> <span class="kt">RichEditorToolbar</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView25RichEditorToolbarDelegate38richEditorToolbarChangeBackgroundColoruRq_S0__Fq_FCS_17RichEditorToolbarT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorToolbarChangeBackgroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView25RichEditorToolbarDelegate38richEditorToolbarChangeBackgroundColoruRq_S0__Fq_FCS_17RichEditorToolbarT_">richEditorToolbarChangeBackgroundColor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the Background Color toolbar item is pressed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorToolbarChangeBackgroundColor</span><span class="p">(</span><span class="nv">toolbar</span><span class="p">:</span> <span class="kt">RichEditorToolbar</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView25RichEditorToolbarDelegate28richEditorToolbarInsertImageuRq_S0__Fq_FCS_17RichEditorToolbarT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorToolbarInsertImage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView25RichEditorToolbarDelegate28richEditorToolbarInsertImageuRq_S0__Fq_FCS_17RichEditorToolbarT_">richEditorToolbarInsertImage(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the Insert Image toolbar item is pressed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorToolbarInsertImage</span><span class="p">(</span><span class="nv">toolbar</span><span class="p">:</span> <span class="kt">RichEditorToolbar</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP14RichEditorView25RichEditorToolbarDelegate27richEditorToolbarInsertLinkuRq_S0__Fq_FCS_17RichEditorToolbarT_"></a>
+                    <a name="//apple_ref/swift/Method/richEditorToolbarInsertLink(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14RichEditorView25RichEditorToolbarDelegate27richEditorToolbarInsertLinkuRq_S0__Fq_FCS_17RichEditorToolbarT_">richEditorToolbarInsertLink(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the Insert Link toolbar item is pressed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">richEditorToolbarInsertLink</span><span class="p">(</span><span class="nv">toolbar</span><span class="p">:</span> <span class="kt">RichEditorToolbar</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/cjwirth/RichEditorView" target="_blank" rel="external">Caesar Wirth</a>. All rights reserved. (Last updated: 2016-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
