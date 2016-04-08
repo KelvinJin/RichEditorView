@@ -124,6 +124,14 @@ public class RichEditorToolbar: UIView {
 
         addSubview(backgroundToolbar)
         addSubview(toolbarScroll)
+        // updateToolbar()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // We'll have to do it here. Otherwise the width of the toolbar will be shorter if we set the constraint on
+        // the tool bar itself.
         updateToolbar()
     }
     
