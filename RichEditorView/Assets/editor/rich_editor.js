@@ -50,6 +50,7 @@ RE.rangeOrCaretSelectionExists = function() {
 RE.editor.addEventListener("input", function() {
     RE.updatePlaceholder();
     RE.backuprange();
+    RE.wrapTextNodes();
     RE.callback("input");
 });
 
@@ -371,4 +372,60 @@ RE.getSelectedHref = function() {
     }
 
     return href ? href : null;
+};
+
+/* Make sure all text nodes are wrapped in divs! */
+
+RE.wrapTextNodes = function() {
+    var contents = RE.editor.childNodes;
+    for (var i = 0; i < contents.length; i++) {
+        if (contents[i].nodeType === Node.TEXT_NODE) {
+            var newNode = document.createElement('div');
+            RE.createWrapper(contents[i], newNode);
+            RE.focus();
+        }
+    }
+}
+
+
+RE.createWrapper = function(elms, node) {
+    var child = node.cloneNode(true);
+    var el    = elms;
+    
+    var parent  = el.parentNode;
+    var sibling = el.nextSibling;
+
+    child.appendChild(el);
+    
+    if (sibling) {
+        parent.insertBefore(child, sibling);
+    } else {
+        parent.appendChild(child);
+    }
+    
+};
+
+// Returns the cursor position relative to its current position onscreen.
+// Can be negative if it is above what is visible
+RE.getRelativeCaretYPosition = function() {
+    var y = 0;
+    var sel = window.getSelection();
+    if (sel.rangeCount) {
+        var range = sel.getRangeAt(0);
+        var needsWorkAround = (range.startOffset == 0)
+        /* Removing fixes bug when node name other than 'div' */
+        // && range.startContainer.nodeName.toLowerCase() == 'div');
+        if (needsWorkAround) {
+            y = range.startContainer.offsetTop - window.pageYOffset;
+        } else {
+            if (range.getClientRects) {
+                var rects=range.getClientRects();
+                if (rects.length > 0) {
+                    y = rects[0].top;
+                }
+            }
+        }
+    }
+
+    return y;
 };
