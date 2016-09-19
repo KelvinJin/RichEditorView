@@ -54,7 +54,7 @@ public struct RichEditorOptionItem: RichEditorOption {
     */
     public var itemAction: ((RichEditorToolbar?) -> Void)
 
-    public init(image: UIImage?, title: String, action: ((RichEditorToolbar?) -> Void)) {
+    public init(image: UIImage?, title: String, action: @escaping (RichEditorToolbar?) -> Void) {
         itemImage = image
         itemTitle = title
         itemAction = action
